@@ -1,0 +1,15 @@
+//Criar projeto em Node.js capaz de responder requisições HTTP.
+
+
+const http = require("http");
+const express = require("express");
+const app = express();
+
+app.get("/", function(req, res) {
+    res.send("<h1>Servidor rodando</h1>");
+});
+
+http.createServer(app).listen(3000, () => console.log("Servidor rodando local na porta 3000"));
+
+//Para rodar temos a função listen do http, ela recebe como primeiro parâmetro a porta que o servidor ficará escutando (aguardando requisições) e como segundo parâmetro devemos passar uma função de callback (que será executada após o servidor estiver rodando), foi passado a porta 3000 para nosso servidor ficar escutando e como segundo parâmetro foi passado uma arrow function responsável apenas por fazer um log nos informando que o servidor está rodando na máquina local na porta 3000. 
+Para testar entramos no navegador e digitamos: localhost:3000
